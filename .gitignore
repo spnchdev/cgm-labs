@@ -1,0 +1,6 @@
+*.pdf
+*.doc*
+instructions-*.md
+*commented.*
+.DS_Store
+
