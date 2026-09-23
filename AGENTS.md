@@ -8,3 +8,10 @@ Please adhere to the following rules to ensure specific files you might get aske
 - If you have been requested to create an instruction markdown file to implement a task, name it `instructions-*.md`, where * would be a specific name you would deem appropriate.
 - If you have been requested to duplicate a file with code in it and make it commented, make sure it adheres to the `*commented.*` glob pattern.
 - If you have been requested to create a guide for a lab report, make sure to name it `report-guide-*.md`.
+
+### Report guide details
+
+This exists as a guideline for me to follow and rewrite into Microsoft Word.
+- It has to follow the structure grasped by the earlier context of the conversation.
+- It has to be in Ukrainian.
+- It must use Markdown.
