@@ -2,5 +2,6 @@
 *.doc*
 instructions-*.md
 *commented.*
+report-guide-*.md
 .DS_Store
-
+.idea/
