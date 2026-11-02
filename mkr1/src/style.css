@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #181a20;
+    color: #f0f4f8;
+    font-family: sans-serif;
+}
+
+.nav {
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 6px 12px;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: 1px solid #3a3f4b;
+    background-color: #242832;
+    color: #f0f4f8;
+}
+
+canvas {
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
