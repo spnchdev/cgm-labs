@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 2 — Interactive Drawing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="control-group" role="group" aria-label="Drawing mode">
+            <span class="group-label">Mode:</span>
+            <button type="button" class="mode-btn active" data-mode="point" aria-pressed="true">Points</button>
+            <button type="button" class="mode-btn" data-mode="triangle" aria-pressed="false">Triangle</button>
+            <button type="button" class="mode-btn" data-mode="circle" aria-pressed="false">Circle</button>
+        </div>
+
+        <div class="control-group">
+            <label for="drawColorSelect">Draw Color:</label>
+            <select id="drawColorSelect">
+                <option value="#ef4444">Red</option>
+                <option value="#22c55e">Green</option>
+                <option value="#3b82f6">Blue</option>
+                <option value="#eab308">Yellow</option>
+                <option value="#06b6d4">Cyan</option>
+                <option value="#d946ef">Magenta</option>
+                <option value="#f97316">Orange</option>
+                <option value="#ffffff">White</option>
+                <option value="#111827">Dark</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="bgColorSelect">Clear Color:</label>
+            <select id="bgColorSelect">
+                <option value="#000000">Black</option>
+                <option value="#1e293b">Slate</option>
+                <option value="#0f172a">Navy</option>
+                <option value="#14532d">Forest</option>
+                <option value="#f8fafc">Light</option>
+            </select>
+        </div>
+
+        <button type="button" id="clearBtn" class="danger-btn">Clear Canvas</button>
+    </header>
+
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+
+    <p id="statusHint" class="status-hint">Points mode: click anywhere on the canvas to place a point.</p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

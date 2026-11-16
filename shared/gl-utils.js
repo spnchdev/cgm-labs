@@ -45,11 +45,16 @@ export const initShaderProgram = (gl, vsSource, fsSource) => {
     return createProgram(gl, vertexShader, fragmentShader);
 };
 
-export const createAndBindBuffer = (gl, data) => {
+export const createAndBindBuffer = (gl, data, usage = gl.STATIC_DRAW) => {
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), usage);
     return buffer;
+};
+
+export const updateBuffer = (gl, buffer, data, usage = gl.DYNAMIC_DRAW) => {
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), usage);
 };
 
 export const bindAttribute = (gl, buffer, attributeLocation, numComponents) => {
