@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 3 — Projections &amp; Transformations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="control-group" role="group" aria-label="Projection type">
+            <span class="group-label">Projection:</span>
+            <button type="button" class="proj-btn active" data-projection="orthographic" aria-pressed="true">Orthographic</button>
+            <button type="button" class="proj-btn" data-projection="perspective" aria-pressed="false">Perspective</button>
+        </div>
+
+        <div class="control-group">
+            <label for="fovSlider">FOV:</label>
+            <input id="fovSlider" type="range" min="30" max="90" step="1" value="45" disabled>
+            <span id="fovValue" class="value-badge">45°</span>
+        </div>
+
+        <div class="control-group">
+            <button type="button" id="playPauseBtn" class="primary-btn">Pause</button>
+            <button type="button" id="resetBtn">Reset</button>
+        </div>
+    </header>
+
+    <section class="toolbar secondary-toolbar" aria-label="Animation settings">
+        <div class="control-group">
+            <span class="group-label">Axes:</span>
+            <label class="toggle-chip"><input type="checkbox" id="axisX" checked> X</label>
+            <label class="toggle-chip"><input type="checkbox" id="axisY" checked> Y</label>
+            <label class="toggle-chip"><input type="checkbox" id="axisZ"> Z</label>
+        </div>
+
+        <div class="control-group">
+            <label for="speedSlider">Speed:</label>
+            <input id="speedSlider" type="range" min="0" max="3" step="0.1" value="1.0">
+            <span id="speedValue" class="value-badge">1.0x</span>
+        </div>
+
+        <div class="control-group">
+            <label for="scaleSlider">Scale:</label>
+            <input id="scaleSlider" type="range" min="0.4" max="1.6" step="0.05" value="1.0">
+            <span id="scaleValue" class="value-badge">1.00</span>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-chip"><input type="checkbox" id="pulseToggle"> Pulse</label>
+            <label class="toggle-chip"><input type="checkbox" id="orbitToggle"> Orbit Motion</label>
+        </div>
+    </section>
+
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+
+    <p id="statusHint" class="status-hint"></p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

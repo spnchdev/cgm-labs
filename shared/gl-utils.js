@@ -52,6 +52,13 @@ export const createAndBindBuffer = (gl, data, usage = gl.STATIC_DRAW) => {
     return buffer;
 };
 
+export const createIndexBuffer = (gl, indices, usage = gl.STATIC_DRAW) => {
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), usage);
+    return buffer;
+};
+
 export const updateBuffer = (gl, buffer, data, usage = gl.DYNAMIC_DRAW) => {
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), usage);
