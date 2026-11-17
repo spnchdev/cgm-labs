@@ -30,9 +30,6 @@ const fsSource = `
     }
 `;
 
-/**
- * Converts a #RRGGBB hex color string into normalized RGBA floats.
- */
 const hexToRgba = (hex) => {
     const clean = hex.replace('#', '');
     const r = Number.parseInt(clean.slice(0, 2), 16) / 255;
@@ -41,10 +38,6 @@ const hexToRgba = (hex) => {
     return [r, g, b, 1.0];
 };
 
-/**
- * Converts a pointer event into WebGL Normalized Device Coordinates [-1, 1]
- * using the canvas bounding client rectangle to eliminate cursor offset.
- */
 const getCanvasNdcCoords = (event) => {
     const canvas = event.target;
     const rect = canvas.getBoundingClientRect();
@@ -99,7 +92,6 @@ const initApp = () => {
         const center = state.vertices[centerIndex];
         const radius = Math.hypot(edgeX - center.x, edgeY - center.y);
 
-        // Remove the center vertex index from pointIndices now that it forms a circle
         const pointPos = state.pointIndices.indexOf(centerIndex);
         if (pointPos !== -1) {
             state.pointIndices.splice(pointPos, 1);
