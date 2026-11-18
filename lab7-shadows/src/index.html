@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 7 — Texture Mapping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="control-group">
+            <label for="shapeSelect">Figure:</label>
+            <select id="shapeSelect">
+                <option value="cube">3D Cube</option>
+                <option value="quad">Textured Quad</option>
+            </select>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Texture mode">
+            <span class="group-label">Texture:</span>
+            <button type="button" class="tex-btn active" data-mode="0" aria-pressed="true">1: Crate</button>
+            <button type="button" class="tex-btn" data-mode="1" aria-pressed="false">2: Brick Wall</button>
+            <button type="button" class="tex-btn" data-mode="2" aria-pressed="false">Blend (1 + 2)</button>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-chip"><input type="checkbox" id="rotateToggle" checked> Auto-Rotate</label>
+        </div>
+    </header>
+
+    <section class="toolbar secondary-toolbar" aria-label="Custom texture upload">
+        <div class="control-group">
+            <label for="uploadTex1">Replace Tex 1:</label>
+            <input id="uploadTex1" type="file" accept="image/*">
+        </div>
+        <div class="control-group">
+            <label for="uploadTex2">Replace Tex 2:</label>
+            <input id="uploadTex2" type="file" accept="image/*">
+        </div>
+        <button type="button" id="resetBtn" class="primary-btn">Reset</button>
+    </section>
+
+    <canvas id="glcanvas" width="640" height="640" title="Click on the canvas to switch textures"></canvas>
+
+    <p id="statusHint" class="status-hint"></p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
