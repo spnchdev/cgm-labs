@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 6 — Surface Shading (Phong GLSL)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Primary Controls: Shape, Shading Model, and Animation -->
+    <header class="toolbar">
+        <div class="control-group">
+            <label for="shapeSelect">Figure:</label>
+            <select id="shapeSelect">
+                <option value="knot">Trefoil Knot</option>
+                <option value="vase">Lathe Vase</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="shadingSelect">Shading:</label>
+            <select id="shadingSelect">
+                <option value="2">Phong (Ambient + Diffuse + Specular)</option>
+                <option value="1">Lambert (Ambient + Diffuse)</option>
+                <option value="0">Ambient Only</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-chip"><input type="checkbox" id="rotateToggle" checked> Auto-Rotate</label>
+        </div>
+
+        <button type="button" id="resetBtn" class="primary-btn">Reset</button>
+    </header>
+
+    <!-- Secondary Controls: Phong Equation Parameters & Light Position -->
+    <section class="toolbar secondary-toolbar" aria-label="Phong shading parameters">
+        <div class="control-group">
+            <label for="shininessSlider">Exponent p:</label>
+            <input id="shininessSlider" type="range" min="4" max="128" step="2" value="42">
+            <span id="shininessValue" class="value-badge">42</span>
+        </div>
+
+        <div class="control-group">
+            <label for="ambientSlider">Ambient c_a:</label>
+            <input id="ambientSlider" type="range" min="0" max="0.8" step="0.05" value="0.20">
+            <span id="ambientValue" class="value-badge">0.20</span>
+        </div>
+
+        <div class="control-group">
+            <label for="specularSlider">Specular c_p:</label>
+            <input id="specularSlider" type="range" min="0" max="1.5" step="0.05" value="0.90">
+            <span id="specularValue" class="value-badge">0.90</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightXSlider">Light X:</label>
+            <input id="lightXSlider" type="range" min="-5" max="5" step="0.1" value="2.5">
+            <span id="lightXValue" class="value-badge">2.5</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightYSlider">Light Y:</label>
+            <input id="lightYSlider" type="range" min="-5" max="5" step="0.1" value="2.2">
+            <span id="lightYValue" class="value-badge">2.2</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightZSlider">Light Z:</label>
+            <input id="lightZSlider" type="range" min="-3" max="6" step="0.1" value="3.0">
+            <span id="lightZValue" class="value-badge">3.0</span>
+        </div>
+    </section>
+
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+
+    <p id="statusHint" class="status-hint"></p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
