@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 4 — Perspective &amp; Camera Transformation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="control-group" role="group" aria-label="Crate and lid rotation">
+            <span class="group-label">Rotate Y:</span>
+            <button type="button" id="rotLeftBtn" title="ArrowLeft">← Left</button>
+            <button type="button" id="rotRightBtn" title="ArrowRight">Right →</button>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Lid open and close">
+            <span class="group-label">Lid:</span>
+            <button type="button" id="lidOpenBtn" title="ArrowUp">↑ Open</button>
+            <button type="button" id="lidCloseBtn" title="ArrowDown">Close ↓</button>
+        </div>
+
+        <button type="button" id="resetBtn" class="primary-btn">Reset</button>
+    </header>
+
+    <section class="toolbar secondary-toolbar" aria-label="Camera and perspective settings">
+        <div class="control-group">
+            <label for="fovSlider">FOV:</label>
+            <input id="fovSlider" type="range" min="30" max="100" step="1" value="55">
+            <span id="fovValue" class="value-badge">55°</span>
+        </div>
+
+        <div class="control-group">
+            <label for="eyeXSlider">Eye X:</label>
+            <input id="eyeXSlider" type="range" min="-2.0" max="2.0" step="0.05" value="0.0">
+            <span id="eyeXValue" class="value-badge">0.00</span>
+        </div>
+
+        <div class="control-group">
+            <label for="eyeYSlider">Eye Y:</label>
+            <input id="eyeYSlider" type="range" min="-1.5" max="1.5" step="0.05" value="0.20">
+            <span id="eyeYValue" class="value-badge">0.20</span>
+        </div>
+
+        <div class="control-group">
+            <label for="eyeZSlider">Eye Z:</label>
+            <input id="eyeZSlider" type="range" min="2.0" max="7.0" step="0.1" value="3.5">
+            <span id="eyeZValue" class="value-badge">3.50</span>
+        </div>
+    </section>
+
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+
+    <p id="statusHint" class="status-hint"></p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

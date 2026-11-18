@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #181a20;
+    color: #f0f4f8;
+    font-family: system-ui, -apple-system, sans-serif;
+    gap: 12px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background-color: #20242d;
+    border: 1px solid #303645;
+    max-width: 760px;
+}
+
+.secondary-toolbar {
+    padding: 8px 16px;
+    gap: 16px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.group-label,
+label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+button {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid #3a3f4b;
+    background-color: #242832;
+    color: #f0f4f8;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+    background-color: #2f3542;
+    border-color: #525b6e;
+}
+
+.primary-btn {
+    background-color: #2563eb;
+    border-color: #3b82f6;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #1d4ed8;
+    border-color: #2563eb;
+}
+
+input[type="range"] {
+    width: 84px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.value-badge {
+    min-width: 38px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: #94a3b8;
+}
+
+canvas {
+    background-color: #0b0f19;
+    outline: 1px solid #3a3f4b;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.status-hint {
+    margin: 0;
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: #94a3b8;
+    text-align: center;
+}

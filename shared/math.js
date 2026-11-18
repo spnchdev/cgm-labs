@@ -1,3 +1,10 @@
+export const createIdentityMatrix = () => new Float32Array([
+    1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0,
+    0.0, 0.0, 1.0, 0.0,
+    0.0, 0.0, 0.0, 1.0,
+]);
+
 export const createXRotationMatrix = (angleInRadians) => {
     const s = Math.sin(angleInRadians);
     const c = Math.cos(angleInRadians);
