@@ -130,3 +130,35 @@ export const createNormalMatrix = (m) => {
                  0.0,          0.0,          0.0, 1.0,
     ]);
 };
+
+export const createLookAtMatrix = (eye, target, up = [0, 1, 0]) => {
+    let zx = eye[0] - target[0];
+    let zy = eye[1] - target[1];
+    let zz = eye[2] - target[2];
+    const zLen = Math.hypot(zx, zy, zz) || 1;
+    zx /= zLen;
+    zy /= zLen;
+    zz /= zLen;
+
+    let xx = up[1] * zz - up[2] * zy;
+    let xy = up[2] * zx - up[0] * zz;
+    let xz = up[0] * zy - up[1] * zx;
+    const xLen = Math.hypot(xx, xy, xz) || 1;
+    xx /= xLen;
+    xy /= xLen;
+    xz /= xLen;
+
+    const yx = zy * xz - zz * xy;
+    const yy = zz * xx - zx * xz;
+    const yz = zx * xy - zy * xx;
+
+    return new Float32Array([
+        xx, yx, zx, 0.0,
+        xy, yy, zy, 0.0,
+        xz, yz, zz, 0.0,
+        -(xx * eye[0] + xy * eye[1] + xz * eye[2]),
+        -(yx * eye[0] + yy * eye[1] + yz * eye[2]),
+        -(zx * eye[0] + zy * eye[1] + zz * eye[2]),
+        1.0,
+    ]);
+};
