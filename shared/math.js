@@ -99,3 +99,34 @@ export const createPerspectiveMatrix = (fovInRadians, aspect, near, far) => {
                  0, 0, 2 * far * near * nf,  0,
     ]);
 };
+
+export const createNormalMatrix = (m) => {
+    const a00 = m[0], a10 = m[1], a20 = m[2];
+    const a01 = m[4], a11 = m[5], a21 = m[6];
+    const a02 = m[8], a12 = m[9], a22 = m[10];
+
+    const c00 = a11 * a22 - a12 * a21;
+    const c10 = a02 * a21 - a01 * a22;
+    const c20 = a01 * a12 - a02 * a11;
+
+    const c01 = a12 * a20 - a10 * a22;
+    const c11 = a00 * a22 - a02 * a20;
+    const c21 = a02 * a10 - a00 * a12;
+
+    const c02 = a10 * a21 - a11 * a20;
+    const c12 = a01 * a20 - a00 * a21;
+    const c22 = a00 * a11 - a01 * a10;
+
+    const det = a00 * c00 + a10 * c10 + a20 * c20;
+    if (Math.abs(det) < 1e-12) {
+        return createIdentityMatrix();
+    }
+
+    const invDet = 1.0 / det;
+    return new Float32Array([
+        c00 * invDet, c10 * invDet, c20 * invDet, 0.0,
+        c01 * invDet, c11 * invDet, c21 * invDet, 0.0,
+        c02 * invDet, c12 * invDet, c22 * invDet, 0.0,
+                 0.0,          0.0,          0.0, 1.0,
+    ]);
+};

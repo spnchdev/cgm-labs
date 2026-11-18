@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Lab 5 — Lighting &amp; Phong Shading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="control-group">
+            <label for="shapeSelect">Object:</label>
+            <select id="shapeSelect">
+                <option value="torus">Torus</option>
+                <option value="sphere">Sphere</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="presetSelect">Lighting Preset:</label>
+            <select id="presetSelect">
+                <option value="studio">Default Studio</option>
+                <option value="sunset">Warm Sunset</option>
+                <option value="neon">Cool Cyan</option>
+                <option value="matte">Matte (Diffuse Only)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-chip"><input type="checkbox" id="rotateToggle" checked> Rotate</label>
+            <label class="toggle-chip"><input type="checkbox" id="orbitLightToggle"> Orbit Light</label>
+        </div>
+
+        <button type="button" id="resetBtn" class="primary-btn">Reset</button>
+    </header>
+
+    <section class="toolbar secondary-toolbar" aria-label="Colors and Phong parameters">
+        <div class="control-group">
+            <label for="bgColorInput">Background:</label>
+            <input id="bgColorInput" type="color" value="#0b1020">
+        </div>
+
+        <div class="control-group">
+            <label for="objectColorInput">Object:</label>
+            <input id="objectColorInput" type="color" value="#3b82f6">
+        </div>
+
+        <div class="control-group">
+            <label for="lightColorInput">Light:</label>
+            <input id="lightColorInput" type="color" value="#ffffff">
+        </div>
+
+        <div class="control-group">
+            <label for="shininessSlider">Shininess:</label>
+            <input id="shininessSlider" type="range" min="4" max="128" step="2" value="48">
+            <span id="shininessValue" class="value-badge">48</span>
+        </div>
+    </section>
+
+    <section class="toolbar secondary-toolbar" aria-label="Phong weights and light position">
+        <div class="control-group">
+            <label for="ambientSlider">Ambient:</label>
+            <input id="ambientSlider" type="range" min="0" max="1" step="0.05" value="0.20">
+            <span id="ambientValue" class="value-badge">0.20</span>
+        </div>
+
+        <div class="control-group">
+            <label for="diffuseSlider">Diffuse:</label>
+            <input id="diffuseSlider" type="range" min="0" max="1.5" step="0.05" value="0.85">
+            <span id="diffuseValue" class="value-badge">0.85</span>
+        </div>
+
+        <div class="control-group">
+            <label for="specularSlider">Specular:</label>
+            <input id="specularSlider" type="range" min="0" max="1.5" step="0.05" value="0.90">
+            <span id="specularValue" class="value-badge">0.90</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightXSlider">Light X:</label>
+            <input id="lightXSlider" type="range" min="-5" max="5" step="0.1" value="2.4">
+            <span id="lightXValue" class="value-badge">2.4</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightYSlider">Light Y:</label>
+            <input id="lightYSlider" type="range" min="-5" max="5" step="0.1" value="2.2">
+            <span id="lightYValue" class="value-badge">2.2</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lightZSlider">Light Z:</label>
+            <input id="lightZSlider" type="range" min="-4" max="6" step="0.1" value="2.8">
+            <span id="lightZValue" class="value-badge">2.8</span>
+        </div>
+    </section>
+
+    <canvas id="glcanvas" width="640" height="640"></canvas>
+
+    <p id="statusHint" class="status-hint"></p>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
